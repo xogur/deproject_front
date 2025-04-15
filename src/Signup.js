@@ -1,21 +1,28 @@
+// 리액트의 useState를 사용용
 import React, { useState } from 'react';
 import './css/Signup.css';
+// 페이지 이동 기능을 하게 해주는 useNavigate를 사용용
 import { useNavigate } from 'react-router-dom'; // 추가
 
-
+// 회원가입 함수수
 const Signup = () => {
+  // navigate에 페이지 이동 기능 선언언
   const navigate = useNavigate();
+  // isSignUp객체를 선언하고 초기값은 true, 객체 값을 변환할때는 setIsSignUp함수를 사용해야 함함
   const [isSignUp, setIsSignUp] = useState(true);
+  // form객체 선언, 초기값 선언, form값을 변환할 때 setForm함수를 사용해야 함함
   const [form, setForm] = useState({
     name: '',
     email: '',
     password: '',
   });
 
+  // handleInputChange함수 선언, e == 이벤트가 발생  -> form객체 값을 변환환
   const handleInputChange = (e) => {
     setForm({ ...form, [e.target.name]: e.target.value });
   };
 
+  // 현재 값을 뒤집어서 저장해줘. 즉, 클릭할 때마다 true ↔ false 전환!
   const togglePanel = () => {
     setIsSignUp(!isSignUp);
   };
@@ -23,16 +30,21 @@ const Signup = () => {
   // ✅ 회원가입 요청
   const handleSignup = async (e) => {
     e.preventDefault();
-    const url = 'http://localhost:8000/api/users/signup';
+    // 백엔드로 요청 보낼거임임
+    // const url = 'http://localhost:8000/api/users/signup';
+    const url = 'http://backend:8000/api/users/signup';
 
     try {
+      // 백엔드에 POST방식으로 form객체를 json형태로 전달달
       const response = await fetch(url, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(form),
       });
 
+      // 응답받은 메시지를 받음음
       const data = await response.text();
+      // response == 200
       if (response.ok) {
         alert('✅ ' + data);
       } else {
@@ -46,7 +58,8 @@ const Signup = () => {
   // ✅ 로그인 요청
   const handleLogin = async (e) => {
     e.preventDefault();
-    const url = 'http://localhost:8000/api/users/login';
+    // const url = 'http://localhost:8000/api/users/login';
+    const url = 'http://backend:8000/api/users/login';
 
     try {
       const response = await fetch(url, {
@@ -77,6 +90,7 @@ const Signup = () => {
       <div className="form-container sign-up-container">
         <form onSubmit={handleSignup}>
           <h1>Create Account</h1>
+          {/* form 객체의 name값을 변경 */}
           <input
             type="text"
             placeholder="Name"
@@ -85,6 +99,7 @@ const Signup = () => {
             onChange={handleInputChange}
             required
           />
+          {/* form 객체의 email값을 변경 */}
           <input
             type="email"
             placeholder="Email"
@@ -93,6 +108,7 @@ const Signup = () => {
             onChange={handleInputChange}
             required
           />
+          {/* form 객체의 password값을 변경 */}
           <input
             type="password"
             placeholder="Password"

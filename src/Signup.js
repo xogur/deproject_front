@@ -31,8 +31,8 @@ const Signup = () => {
   const handleSignup = async (e) => {
     e.preventDefault();
     // 백엔드로 요청 보낼거임임
-    // const url = 'http://localhost:8000/api/users/signup';
-    const url = 'http://backend:8000/api/users/signup';
+    const url = 'http://localhost:8000/api/users/signup';
+    //const url = 'http://backend:8000/api/users/signup';
 
     try {
       // 백엔드에 POST방식으로 form객체를 json형태로 전달달
@@ -58,8 +58,8 @@ const Signup = () => {
   // ✅ 로그인 요청
   const handleLogin = async (e) => {
     e.preventDefault();
-    // const url = 'http://localhost:8000/api/users/login';
-    const url = 'http://backend:8000/api/users/login';
+    const url = 'http://localhost:8000/api/users/login';
+    // const url = 'http://backend:8000/api/users/login';
 
     try {
       const response = await fetch(url, {

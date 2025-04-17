@@ -30,23 +30,20 @@ const Signup = () => {
   // ✅ 회원가입 요청
   const handleSignup = async (e) => {
     e.preventDefault();
-    // 백엔드로 요청 보낼거임임
     const url = 'http://localhost:8000/api/users/signup';
-    //const url = 'http://backend:8000/api/users/signup';
-
+  
     try {
-      // 백엔드에 POST방식으로 form객체를 json형태로 전달달
       const response = await fetch(url, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(form),
       });
-
-      // 응답받은 메시지를 받음음
+  
       const data = await response.text();
-      // response == 200
       if (response.ok) {
         alert('✅ ' + data);
+        localStorage.setItem('userEmail', form.email); // ✅ 로그인 상태 저장
+        navigate('/main'); // ✅ 메인 페이지로 이동
       } else {
         alert('❌ ' + data);
       }
@@ -89,7 +86,7 @@ const Signup = () => {
       {/* 🔹 회원가입 폼 */}
       <div className="form-container sign-up-container">
         <form onSubmit={handleSignup}>
-          <h1>Create Account</h1>
+          <h1>Create Account __ </h1>
           {/* form 객체의 name값을 변경 */}
           <input
             type="text"

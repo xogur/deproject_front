@@ -30,7 +30,7 @@ const Signup = () => {
   // ✅ 회원가입 요청
   const handleSignup = async (e) => {
     e.preventDefault();
-    const url = 'http://localhost:8000/api/users/signup';
+    const url = `${process.env.REACT_APP_API_URL}/api/users/signup`;
   
     try {
       const response = await fetch(url, {
@@ -55,7 +55,7 @@ const Signup = () => {
   // ✅ 로그인 요청
   const handleLogin = async (e) => {
     e.preventDefault();
-    const url = 'http://localhost:8000/api/users/login';
+    const url = `${process.env.REACT_APP_API_URL}/api/users/login`;
     // const url = 'http://backend:8000/api/users/login';
 
     try {

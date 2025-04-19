@@ -23,7 +23,7 @@ const Main = () => {
 
   const checkMusinsaRegistered = async (email) => {
     try {
-      const response = await fetch(`http://localhost:8000/api/users/musinsa?email=${email}`);
+      const response = await fetch(`${process.env.REACT_APP_API_URL}/api/users/musinsa?email=${email}`);
       if (response.ok) {
         const data = await response.json();
         if (data && data.musinsaId) {
@@ -48,7 +48,7 @@ const Main = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     const email = localStorage.getItem('userEmail');
-    const url = `http://localhost:8000/api/users/musinsa`;
+    const url = `${process.env.REACT_APP_API_URL}/api/users/musinsa`;
 
     try {
       const response = await fetch(url, {

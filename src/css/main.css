@@ -1,12 +1,24 @@
 html {
 	height: 100%;
   }
+
+  .box-container {
+	display: flex;
+	justify-content: space-evenly;  /* 가로 중앙 정렬 */
+	align-items: flex-start;  /* 상단 기준 정렬 */
+	gap: 40px;                /* 박스 사이 간격 */
+	flex-wrap: wrap;          /* 화면 좁으면 아래로 내려옴 */
+	margin-top: 20px;         /* 필요에 따라 여백 */
+	
+  }
+
   
   .login-box {
-	position: absolute;
+	position: relative;
 	top: 50%;
-	left: 50%;
+	left: 25%;
 	width: 400px;
+	height: 250px;
 	padding: 40px;
 	transform: translate(-50%, -50%);
 	background: rgba(0,0,0,.5);

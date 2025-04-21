@@ -103,17 +103,17 @@ const Main = () => {
         backgroundColor: '#f5f5f5', padding: '15px 0', textAlign: 'center',
         borderBottom: '1px solid #ddd', zIndex: 1000
       }}>
-        <h1 style={{ margin: '0', fontSize: '1.2rem' }}>🎉 환영합니다, {userEmail}님!</h1>
+        <h1 style={{ margin: '0', fontSize: '1.2rem' }}>환영합니다, {userEmail}님!</h1>
         <button onClick={handleLogout} style={{ marginTop: '5px' }}>로그아웃</button>
       </header>
 
-      <main style={{ paddingTop: '120px', textAlign: 'center' }}>
+      <main style={{ paddingTop: '120px', textAlign: 'center'}}>
+        <div className='box-container'>
         <div className="login-box">
           <h2>무신사 계정 등록</h2>
-
           {isRegistered ? (
             <div>
-              <p style={{ color: '#fff' }}>✅ 이미 등록된 무신사 계정입니다.</p>
+              <p style={{ color: '#fff' }}>이미 등록된 무신사 계정입니다.</p>
               <button
                 onClick={async () => {
                   const userEmail = localStorage.getItem('userEmail');
@@ -136,9 +136,9 @@ const Main = () => {
                 }}
                 disabled={isCooldown}
                 style={{
-                  marginTop: '20px',
-                  backgroundColor: isCooldown ? '#ccc' : '#03e9f4',
-                  color: '#000',
+                  marginBottom: '20px',
+                  backgroundColor: isCooldown ? '#ccc' : 'darkgrey',
+                  color: 'white',
                   padding: '10px 20px',
                   borderRadius: '5px',
                   border: 'none',
@@ -161,6 +161,33 @@ const Main = () => {
               <button type="submit" style={{ marginTop: '20px', background: 'rgba(0,0,0,.5)', borderColor: 'rgba(0,0,0,.5)' }}>등록</button>
             </form>
           )}
+        </div>
+        
+        <div className="login-box">
+          <h2>패션 트렌드</h2>
+          <p style={{ color: '#fff' }}>최신 패션 트렌드를 볼 수 있습니다.</p>
+          {isRegistered ? (
+            <button
+              onClick={() => {
+                window.open('http://localhost:8501/', '_blank');
+                
+              }}
+              style={{
+                marginBottom: '20px',
+                backgroundColor: 'darkgrey',
+                color: 'white',
+                padding: '10px 20px',
+                borderRadius: '5px',
+                border: 'none',
+                cursor: isCooldown ? 'not-allowed' : 'pointer'
+              }}
+            >
+              트렌드 분석 보러가기
+            </button>
+          ) : (
+            <p style={{ color: '#fff' }}>무신사 계정 등록 후 사용 가능</p>
+          )}
+        </div>
         </div>
       </main>
     </div>

@@ -132,6 +132,22 @@ const Main = () => {
       <main style={{ paddingTop: '120px', textAlign: 'center'}}>
         <div className='box-container'>
         <div className="login-box">
+                  {/* 무신사 로고 이미지 */}
+            <img 
+              src="https://noticon-static.tammolo.com/dgggcrkxq/image/upload/v1610509842/noticon/lrwylg0qjbuev8hd0ovq.png"  // 👉 올린 이미지를 이 경로로 저장했다고 가정
+              alt="무신사 로고"
+              style={{
+                position: 'absolute',
+                top: '-30px',
+                left: '50%',
+                transform: 'translateX(-50%)',
+                width: '60px',
+                height: '60px',
+                borderRadius: '10%',
+                backgroundColor: 'white',
+                boxShadow: '0 4px 10px rgba(0, 0, 0, 0.15)'
+              }}
+            />
           <h2>무신사 계정 등록</h2>
           {isRegistered ? (
             <div>
@@ -186,6 +202,21 @@ const Main = () => {
         </div>
         
         <div className="login-box">
+        <img 
+              src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSUWf9vKvLbrmHMW5MnCZ4aONKvDYwnUWb05w&s"  // 👉 올린 이미지를 이 경로로 저장했다고 가정
+              alt="패션션 로고"
+              style={{
+                position: 'absolute',
+                top: '-30px',
+                left: '50%',
+                transform: 'translateX(-50%)',
+                width: '60px',
+                height: '60px',
+                borderRadius: '10%',
+                backgroundColor: 'white',
+                boxShadow: '0 4px 10px rgba(0, 0, 0, 0.15)'
+              }}
+            />
           <h2>패션 트렌드</h2>
           <p style={{ fontSize: '0.9rem', color: '#fff', marginBottom: '10px' }}>
             무신사 계정 등록 후 AI가 분석한 트렌드를 확인할 수 있어요.

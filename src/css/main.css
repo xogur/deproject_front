@@ -9,7 +9,6 @@ html {
 	gap: 40px;                /* 박스 사이 간격 */
 	flex-wrap: wrap;          /* 화면 좁으면 아래로 내려옴 */
 	margin-top: 20px;         /* 필요에 따라 여백 */
-	
   }
 
   

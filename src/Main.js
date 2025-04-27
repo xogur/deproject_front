@@ -187,7 +187,7 @@ const Main = () => {
         
         <div className="login-box">
           <h2>패션 트렌드</h2>
-          <p style={{ fontSize: '0.9rem', color: '#ddd', marginBottom: '10px' }}>
+          <p style={{ fontSize: '0.9rem', color: '#fff', marginBottom: '10px' }}>
             무신사 계정 등록 후 AI가 분석한 트렌드를 확인할 수 있어요.
           </p>
           {isRegistered ? (

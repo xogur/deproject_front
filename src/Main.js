@@ -100,12 +100,34 @@ const Main = () => {
     <div>
       <header style={{
         position: 'fixed', top: 0, left: 0, width: '100%',
-        backgroundColor: '#f5f5f5', padding: '15px 0', textAlign: 'center',
-        borderBottom: '1px solid #ddd', zIndex: 1000
+        backgroundColor: '#fdfdfd', padding: '15px 0',
+        textAlign: 'center', borderBottom: '1px solid #e0e0e0', zIndex: 1000,
+        boxShadow: '0px 4px 12px rgba(0,0,0,0.05)'
       }}>
         <h1 style={{ margin: '0', fontSize: '1.2rem' }}>안녕하세요 {userEmail}님! 오늘도 멋진 스타일을 찾아보세요!</h1>
-        <button onClick={handleLogout} style={{ marginTop: '5px', backgroundColor: '#FF4B2B', borderColor: '#FF4B2B' }}>로그아웃</button>
+        <button onClick={handleLogout} style={{ marginTop: '5px', backgroundColor: '#2C3E50', borderColor: '#2C3E50' }}>로그아웃</button>
       </header>
+
+      <div style={{
+        backgroundColor: '#f5f8fc',
+        padding: '40px 30px',
+        borderRadius: '20px',
+        boxShadow: '8px 8px 20px #d1d9e6, -8px -8px 20px #ffffff',
+        maxWidth: '800px',
+        margin: '40px auto',
+        textAlign: 'center',
+        fontFamily: "'Pretendard', sans-serif"
+      }}>
+        
+        <p style={{
+          fontSize: '1.2rem',
+          fontWeight: '500',
+          color: '#f39c12',
+          marginTop: '0'
+        }}>
+          당신의 오늘을 위한 패션 인사이트.
+        </p>
+      </div>
 
       <main style={{ paddingTop: '120px', textAlign: 'center'}}>
         <div className='box-container'>
@@ -165,7 +187,9 @@ const Main = () => {
         
         <div className="login-box">
           <h2>패션 트렌드</h2>
-          <p style={{ color: '#fff' }}>최신 패션 트렌드를 볼 수 있습니다.</p>
+          <p style={{ fontSize: '0.9rem', color: '#ddd', marginBottom: '10px' }}>
+            무신사 계정 등록 후 AI가 분석한 트렌드를 확인할 수 있어요.
+          </p>
           {isRegistered ? (
             <button
               onClick={() => {

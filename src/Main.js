@@ -103,8 +103,8 @@ const Main = () => {
         backgroundColor: '#f5f5f5', padding: '15px 0', textAlign: 'center',
         borderBottom: '1px solid #ddd', zIndex: 1000
       }}>
-        <h1 style={{ margin: '0', fontSize: '1.2rem' }}>환영합니다, {userEmail}님!</h1>
-        <button onClick={handleLogout} style={{ marginTop: '5px', backgroundColor: 'blue', borderColor: 'blue' }}>로그아웃</button>
+        <h1 style={{ margin: '0', fontSize: '1.2rem' }}>안녕하세요 {userEmail}님! 오늘도 멋진 스타일을 찾아보세요!</h1>
+        <button onClick={handleLogout} style={{ marginTop: '5px', backgroundColor: '#FF4B2B', borderColor: '#FF4B2B' }}>로그아웃</button>
       </header>
 
       <main style={{ paddingTop: '120px', textAlign: 'center'}}>

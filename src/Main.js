@@ -224,7 +224,7 @@ const Main = () => {
           {isRegistered ? (
             <button
               onClick={() => {
-                window.open('http://54.180.82.63:8501/', '_blank');
+                window.open('http://localhost:8501/', '_blank');
                 
               }}
               style={{
